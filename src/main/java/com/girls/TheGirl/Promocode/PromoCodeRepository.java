@@ -5,6 +5,7 @@
  */
 package com.girls.TheGirl.Promocode;
 
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -12,6 +13,6 @@ import org.springframework.data.repository.CrudRepository;
  * @author A
  */
 public interface PromoCodeRepository extends CrudRepository<PromoCode, Long> {
-    //List<Product> findByFirstName(String firstName);
+    List<PromoCode> findBypromoCode(String promoCode);
 
 }

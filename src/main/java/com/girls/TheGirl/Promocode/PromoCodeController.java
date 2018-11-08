@@ -26,29 +26,30 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/PromoCode")
 public class PromoCodeController {
-    
+
     @Autowired
     PromoCodeService PromoCodeService;
-    
+
     //////////////////////////////////////เรียกดูสินค้าทั้งหมด ดูได้ใน Service/////////////////////////////////////
     @GetMapping()
     public List<PromoCode> getPromoCode() {
         return PromoCodeService.retrievePromoCode();
     }
-    
+
     //////////////////////////////////////เพิ่มสินค้าด้วย JSON ในรูปแบบของการยิง POST เข้ามา/////////////////////////////////////
     @PostMapping("/add")
-    public ResponseEntity<?> postPromoCode(@Valid @RequestBody PromoCode body){
+    public ResponseEntity<?> postPromoCode(@Valid @RequestBody PromoCode body) {
         PromoCode pc = PromoCodeService.createPromoCode(body);
-        
+
         return ResponseEntity.status(HttpStatus.CREATED).body(pc);
     }
-    
+
     @PostMapping("/check")
-    public int postCheckPromoCode(@Valid @RequestBody PromoCode body){  
+    public List<PromoCode> postCheckPromoCode(@Valid @RequestBody PromoCode body) {
+        List<PromoCode> getCode = PromoCodeService.retrievePromoCodeByName(body.getPromoCode());
         System.out.println(body);
-        
-       return body.getDiscount();
+        return getCode;
+
     }
-    
+
 }

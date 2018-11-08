@@ -23,11 +23,16 @@ class PromoCodeService {
     public PromoCodeService(PromoCodeRepository repository) {
         this.PromoCodeRepository = repository;
     }
-
-    public List<PromoCode> retrievePromoCode() {
+    
+     public List<PromoCode> retrievePromoCode() {
         return (List<PromoCode>) PromoCodeRepository.findAll();
     }
+     
+    public List<PromoCode> retrievePromoCodeByName(String promoCode) {
+        return (List<PromoCode>) PromoCodeRepository.findBypromoCode(promoCode);
+    }
 
+    
 
 
     public PromoCode createPromoCode(PromoCode pc) {

@@ -5,7 +5,6 @@
  */
 package com.girls.TheGirl.Promocode;
 
-import com.girls.TheGirl.Product.Product;
 import org.springframework.data.repository.CrudRepository;
 
 /**

@@ -47,6 +47,7 @@ public class PromoCodeController {
     @PostMapping("/check")
     public int postCheckPromoCode(@Valid @RequestBody PromoCode body){  
         System.out.println(body);
+        
        return body.getDiscount();
     }
     

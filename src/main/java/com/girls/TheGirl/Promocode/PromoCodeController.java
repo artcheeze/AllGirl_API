@@ -37,11 +37,17 @@ public class PromoCodeController {
     }
     
     //////////////////////////////////////เพิ่มสินค้าด้วย JSON ในรูปแบบของการยิง POST เข้ามา/////////////////////////////////////
-    @PostMapping()
+    @PostMapping("/add")
     public ResponseEntity<?> postPromoCode(@Valid @RequestBody PromoCode body){
         PromoCode pc = PromoCodeService.createPromoCode(body);
         
         return ResponseEntity.status(HttpStatus.CREATED).body(pc);
+    }
+    
+    @PostMapping("/check")
+    public int postCheckPromoCode(@Valid @RequestBody PromoCode body){  
+        System.out.println(body);
+       return body.getDiscount();
     }
     
 }

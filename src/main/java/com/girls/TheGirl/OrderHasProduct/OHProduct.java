@@ -34,7 +34,7 @@ public class OHProduct {
     
      @NotNull
     @OneToOne
-    @JoinColumn(name = "prodPrice", table = "product")
+    @JoinColumn(name = "prodPrice")
     private Product prodPrice;
     
     @Id

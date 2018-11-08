@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 import lombok.Data;
 
 /**
@@ -25,6 +26,12 @@ public class PromoCode {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long promoId;
+    
+    @NotNull
+    private String promoCode;
+    
+    @NotNull
+    private int discount;
 
     @Temporal(TemporalType.DATE)
     private Date expireDate;

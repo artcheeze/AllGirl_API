@@ -35,6 +35,8 @@ public class Product {
     @NotNull
     private String prodBrand;
 
+   
+
     
     
 }

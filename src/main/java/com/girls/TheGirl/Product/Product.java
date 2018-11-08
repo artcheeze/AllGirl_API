@@ -29,7 +29,6 @@ public class Product {
     @NotNull
     private int prodPrice;
 
-    @NotNull
     private String prodImage;
     
     @NotNull

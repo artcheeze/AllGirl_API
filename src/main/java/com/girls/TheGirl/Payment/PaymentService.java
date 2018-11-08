@@ -32,7 +32,7 @@ public class PaymentService {
 
 
 
-    public Payment createOPayment(Payment p) {
+    public Payment createPayment(Payment p) {
         return PaymentRepository.save(p);
     }
 }

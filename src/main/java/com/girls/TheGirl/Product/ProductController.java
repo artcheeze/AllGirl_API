@@ -31,7 +31,7 @@ public class ProductController {
     ProductService ProductService;
     
     //////////////////////////////////////เรียกดูสินค้าทั้งหมด ดูได้ใน Service/////////////////////////////////////
-    @CrossOrigin(origins = "http://localhost:8080/Product")
+   
     @GetMapping()
     public List<Product> getProduct() {
         return ProductService.retrieveProduct();

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>allGirl</title>
+
+    <!-- Bootstrap -->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <script>
+    
+ /////////// ตรงนี้คือส่วนที่ดึงข้อมูล จาก Backend มา แล้วแปลงเป็นไฟล์ Json 
+    fetch('http://localhost:8080/Product').then(res => res.json()).then(resJson => {
+        console.log(resJson[0])
+        document.getElementById('data').innerHTML = resJson[0].prodName
+        
+        })
+    
+    </script>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+    <style>
+
+.nav {
+
+  background-color: #CCD3F7 
+}
+.header{
+  
+  position: sticky;
+background-color: #CCD3F7 
+   width: 100%;
+
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   
+}
+.chat{
+
+   text-align: center;
+   background-color: #CCD3F7 ;
+   width: 30%;
+  
+}
+
+.buyProduct{
+  background-color: #FC373C;
+  color: white;
+  font-size: 15 px;
+  text-align: center;
+  padding-top: 6px;
+  
+}
+
+
+</style>
+  </head>
+
+  <body>
+
+
+
+
+  
+ <header class="header">
+  <nav class="header" >
+   
+    <nav class="col-xs-12 text-center" style="background-color: #CCD3F7  ">
+       
+       <a href="#" class="button"><img src="arrow.png" width="35" align="left" style="margin-top: 10px ;margin-left: 4px" ></a>
+          <h1 style="font-size: 20px " align="center">รายละเอียดสินค้า</h1>     
+     </nav>
+  </nav>
+</header>
+
+
+
+<div align="center"> 
+<p> 
+    <img id="productImage" align="center" src="hoodie.jpg" alt="เสื้อฮู้ดผ้าหนา" width="300" height="300"  >
+</p>
+</div>
+
+
+<div class="container-fluid" >
+
+  <div class="col-xs-12 col-md-12" align="center" >
+      <div class="thumbnail col-md-offset-3 col-md-6" >
+          <h2 id="productName" class="productName" style="font-size: 16px  ; font-weight: bold  "  >เสื้อฮู้ดผ้าหนา</h2>
+          <h2 id="productPrice" class="productP
+          rice" style="font-size: 16px ; font-weight: bold  "  >฿ 1,190</h2>
+          <h2 id="productDetail" class="productDetail" style="font-size: 16px ; font-weight: bold  " >รายละเอียดสินค้า</h2>
+          <p> Size M :
+  ความยาว 60 cm
+  หน้าอก 98 cm
+  ความยาวแขน 18 cm
+  ไหล่กว้าง 15 cm
+  Free Size :
+  ความยาว 62 cm
+  หน้าอก 100 cm
+  ความยาวแขน 20 cm
+  ไหล่กว้าง 16 cm
+
+  ***สีจริงกับสินค้าอาจะเเตกต่างกัน
+          </p>
+    </div>
+  </div>
+</div>
+
+
+<div class="footer">
+  <table  class="footer" >
+     <tbody>
+        <tr>
+          <td class="chat" >
+            <a href="#" class="button"><img src="chat.png" width="20px" style="padding-top: 7px" ><br/></a>เเชท</td>
+            <a href="#" class="button"><td class="buyProduct" >ซื้อสินค้า</td></a>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+      <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Order</title>
+
+    <!-- Bootstrap -->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <script>
+    
+ /////////// ตรงนี้คือส่วนที่ดึงข้อมูล จาก Backend มา แล้วแปลงเป็นไฟล์ Json 
+    fetch('http://localhost:8080/Product').then(res => res.json()).then(resJson => {
+        console.log(resJson[0])
+        document.getElementById('data').innerHTML = resJson[0].prodName
+        
+        })
+    
+    </script>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+  .nav{
+    background-color: #CCD3F7;
+  }
+
+  .header{
+    font-family: TH Sarabun New;
+    position: sticky;
+    width: 100%;
+  }
+
+  .button1{
+    border: 1px solid black;
+    background-color: #ffffff;
+  }
+
+  .button2{
+    background-color: #FF3434;
+    color: #ffffff;
+    border: none;
+    
+  }
+
+  .footer {
+    background-color: #ffffff;
+    bottom: 0px;
+    text-align: right;
+    font-size: 18px;
+    position: fixed;
+    padding: 10px;
+  }
+
+  .input1{
+    background-color: #F1F1F1;
+    border: none;
+  }
+
+  table{
+    font-family: TH Sarabun New;
+    border-collapse: collapse;
+    width: 100%
+    border: 1px solid white;
+    display: inline-block;
+  }
+
+  tr {
+    background-color: #ffffff;
+  }
+
+  td{
+    line-height: 18px;
+  }
+
+  </style>
+</head>
+
+<body style="background-color: #e5e5e5">
+  <header class="header">
+  <nav class="header" >
+      <nav class="col-xs-12 text-center" style="background-color: #CCD3F7">
+        <a href="#arrow" class="button"><img src="arrow.png" width="35" align="left" style="margin-top: 10px; margin-left: 4px" ></a>
+        <h1 style="font-size: 30px; text-align: center;">ทำการสั่งสินค้า</h1>     
+     </nav>
+  </nav>
+</header>
+  <table>
+    <tr>
+      <td width="60"><img id="productImage" align="center" src="hoodie.svg" alt="เสื้อฮู้ดผ้าหนา" width="80" style="margin-left: 40px; margin-right: 40px;"></td>
+      <td width="270"><h2 id="productName" class="productName" style="font-size: 24px; font-weight: bold; margin-left: 20px;">เสื้อฮู้ดผ้าหนา</h2>
+          <p id="productPrice" class="productPrice" style="font-size: 20px; margin-left: 20px;">ราคา 1,190 บาท</p>
+        <p id="productBrand" class="productBrand" style="font-size: 20px; margin-left: 20px;">ยี่ห้อ no brand</p>
+      <p id="productColor" class="productColor" style="font-size: 20px; margin-left: 20px;">สี เขียวมิ้นท์</p>
+    <button class="button1" style="font-size: 20px; margin-left: 20px;">-</button><span id="productQuanlity" class="productQuanlity" style="font-size: 20px; margin-left: 20px;">1</span><button class="button1" style="font-size: 20px; margin-left: 20px;">+</button>
+      <p></p>
+    </td>
+    </tr>
+  </table>
+
+<table class="footer">
+    <tr>
+      <td>ใส่ Code Promotion:<input class="input1" type="text" name="codePromotion" value="" style="margin-left: 10px;"><button class="button2" style="font-size: 14px; margin-left: 20px;">ตรวจสอบ code</button></td>
+    </tr>
+    <tr>
+      <td>รวมทั้งหมด: 1,190 บาท<button class="button2" style="font-size: 20px; margin-top: 10px; margin-left: 20px;">ชำระเงิน</button></td>
+    </tr>
+  </table>
+  
+</body>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+      <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</html>

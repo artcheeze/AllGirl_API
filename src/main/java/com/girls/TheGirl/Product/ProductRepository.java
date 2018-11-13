@@ -6,13 +6,13 @@
 package com.girls.TheGirl.Product;
 
 import java.util.List;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author A
  */
-public interface ProductRepository extends CrudRepository<Product, Long> {
+public interface ProductRepository extends JpaRepository<Product, Long> {
     //List<Product> findByFirstName(String firstName);
 
 }

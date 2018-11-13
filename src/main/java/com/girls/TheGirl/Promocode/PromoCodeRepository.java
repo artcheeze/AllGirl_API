@@ -6,13 +6,13 @@
 package com.girls.TheGirl.Promocode;
 
 import java.util.List;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author A
  */
-public interface PromoCodeRepository extends CrudRepository<PromoCode, Long> {
+public interface PromoCodeRepository extends JpaRepository<PromoCode, Long> {
     List<PromoCode> findBypromoCode(String promoCode);
 
 }

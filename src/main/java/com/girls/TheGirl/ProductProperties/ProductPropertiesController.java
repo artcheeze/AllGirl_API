@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping("/ProductController")
+@RequestMapping("/ProductProperties")
 public class ProductPropertiesController {
     
     @Autowired

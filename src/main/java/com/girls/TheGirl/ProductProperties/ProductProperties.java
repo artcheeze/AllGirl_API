@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.girls.TheGirl.Product;
+package com.girls.TheGirl.ProductProperties;
+import com.girls.TheGirl.Product.Product;
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,7 +22,7 @@ import lombok.Data;
  */
 @Data
 @Entity
-public class ProductProperties {
+public class ProductProperties implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long prodPropId;

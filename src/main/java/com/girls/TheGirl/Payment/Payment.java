@@ -34,7 +34,7 @@ public class Payment {
     private Long paymentId;
 
     @Temporal(TemporalType.DATE)
-    private Date dateCreated;
+    private Date dateTime;
 
     @NotNull
     private String creditCard;
@@ -46,6 +46,9 @@ public class Payment {
     @OneToOne
     @JoinColumn(name = "orderId")
     private Orders orderId;
+
+    @NotNull
+    private double totalPrice;
 
    
 }

@@ -24,12 +24,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/Orders")
 public class OrdersController {
 
-    @Autowired
+    @Autowired //เป็นการเชื่อมclassกัน อย่างauto
     OrdersService OrdersService;
 
     @GetMapping()
     public List<Orders> getOrders() {
         return OrdersService.retrieveOrders();
     }
-
+    //สร้างรับ post จากอาทฟร้อน
+    @PostMapping()
+    public ResponseEntity<?> postOrder(@Valid @RequestBody Orders body){
+        Orders o = OrdersService.createOrders(body);
+        System.out.println(body);
+        return ResponseEntity.status(HttpStatus.CREATED).body(o);
+    }
 }

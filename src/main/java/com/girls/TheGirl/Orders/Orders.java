@@ -24,7 +24,7 @@ import lombok.Data;
 @Data
 @Entity
 public class Orders {
-    @NotNull
+   @NotNull
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long orderId;
@@ -35,10 +35,11 @@ public class Orders {
     private Product prodId;
 
     @NotNull
-    private int quntity;
+    private int totalPrice;
     
     @NotNull
-    private int TotalPrice;
+    private int quantity;
+    
     
     @NotNull
     private String promoCode;
@@ -49,7 +50,9 @@ public class Orders {
     private Payment paymentId;
     
      @NotNull
-    private String address;
+    private String address; 
+     
+     //แก้ตามerแล้ว
 
     
 }

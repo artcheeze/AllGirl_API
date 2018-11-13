@@ -17,19 +17,19 @@ import org.springframework.stereotype.Service;
  */
 @Service
 class ProductService {
-   private ProductRepository ProductRepository;
+   private ProductRepository productRepository;
 
     @Autowired
     public ProductService(ProductRepository repository) {
-        this.ProductRepository = repository;
+        this.productRepository = repository;
     }
 
     public List<Product> retrieveProduct() {
-        return (List<Product>) ProductRepository.findAll();
+        return (List<Product>) productRepository.findAll();
     }
 
     public Product createProduct(Product product) {
-        return ProductRepository.save(product);
+        return productRepository.save(product);
     }
 
     

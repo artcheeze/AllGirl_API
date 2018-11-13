@@ -28,14 +28,4 @@ public class Product {
 
     @NotNull
     private int prodPrice;
-
-    private String prodImage;
-    
-    @NotNull
-    private String prodBrand;
-
-   
-
-    
-    
 }

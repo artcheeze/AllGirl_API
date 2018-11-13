@@ -9,6 +9,7 @@ import com.girls.TheGirl.OrderHasProduct.*;
 import com.girls.TheGirl.Product.Product;
 import com.girls.TheGirl.Product.ProductRepository;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,22 +17,27 @@ import org.springframework.stereotype.Service;
  *
  * @author A
  */
-@Service
+@Service //แหล่งmethodที่ต้องใช้
 public class OrdersService {
      private OrdersRepository OrdersRepository;
 
     @Autowired
-    public OrdersService(OrdersRepository repository) {
+    public OrdersService(OrdersRepository repository) { //เรียกเชื่อม
         this.OrdersRepository = repository;
     }
 
-    public List<Orders> retrieveOrders() {
+    public List<Orders> retrieveOrders() { //เรียกorderทั้งหมด
         return (List<Orders>) OrdersRepository.findAll();
     }
 
 
-
-    public Orders createOrders(Orders o) {
+    public Orders createOrders(Orders o) { //เพิ่มorder
         return OrdersRepository.save(o);
+    }
+    
+    //แก้ไขaddressในแต่ละorder
+    public Optional<Orders> updateAddress(Long id, Orders Order) {
+        Optional<Orders> OrdersOptional = OrdersRepository.findById(id);
+        return Optional.of(OrdersRepository.save(Order));
     }
 }

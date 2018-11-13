@@ -27,7 +27,7 @@ public class ProductDetailController {
     @Autowired
     ProductDetailService productDetailService;
 
-    @GetMapping("/")
+    @GetMapping("/") ///////จริงๆมันต้องเขียนแบบนี้ @GetMapping() ถ้าเขียนแบบ "/" เวลาเรียกต้องพิม /ProductDetail/ 
     public List<ProductDetail> getProductDetail() {
         return productDetailService.retrieveProductDetail();
     }

@@ -6,6 +6,7 @@
 package com.girls.TheGirl.Product;
 
 import java.util.List;
+import java.util.Optional;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,6 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,6 +37,15 @@ public class ProductController {
     @GetMapping()
     public List<Product> getProduct() {
         return ProductService.retrieveProduct();
+    }
+    
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getProductById(@PathVariable Long id) {
+        Optional<Product> prod = ProductService.retrieveProduct(id);
+        if(prod.isPresent()) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(prod);
     }
     
     //////////////////////////////////////เพิ่มสินค้าด้วย JSON ในรูปแบบของการยิง POST เข้ามา/////////////////////////////////////

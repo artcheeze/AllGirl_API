@@ -30,11 +30,5 @@ public class ProductDetailService {
     public Optional<ProductDetail> retrieveProductDetail(Long id) {
         return productDetailRepository.findById(id);
     }
-    
-    public ProductDetail createProductDetail(ProductDetail pd){
-        return productDetailRepository.save(pd);
-        }
-    }
 
-
-
+}

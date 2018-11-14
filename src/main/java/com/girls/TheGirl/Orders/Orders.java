@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import lombok.Data;
 
@@ -24,30 +25,27 @@ import lombok.Data;
 @Data
 @Entity
 public class Orders {
-   @NotNull
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long orderId;
 
     @NotNull
-    @OneToOne
-    @JoinColumn(name = "prodId")
-    private Product prodId;
+  //  @OneToOne
+    //@JoinColumn(name = "prodId")
+    private int prodId;
 
     @NotNull
     private int totalPrice;
     
-    @NotNull
-    private int quantity;
-    
-    
-    @NotNull
+    //@NotNull
+    @NotBlank
     private String promoCode;
 
     @NotNull
-    @OneToOne
-    @JoinColumn(name = "paymentId")
-    private Payment paymentId;
+  //  @OneToOne
+   // @JoinColumn(name = "paymentId")
+    private int paymentId;
     
      @NotNull
     private String address; 

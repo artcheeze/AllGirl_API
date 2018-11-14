@@ -49,7 +49,7 @@ public class ProductPropertiesController {
      
     @PostMapping()
     public ResponseEntity<?> postProductPropertiesController(@Valid @RequestBody Product body){
-        Product prod = productPropertiesService.createProduct(body);
+        Product prod = productPropertiesService.createProductProperties(body);
         
         return ResponseEntity.status(HttpStatus.CREATED).body(prod);
     }

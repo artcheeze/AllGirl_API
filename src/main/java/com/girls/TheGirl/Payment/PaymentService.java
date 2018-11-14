@@ -6,7 +6,7 @@
 package com.girls.TheGirl.Payment;
 
 import com.girls.TheGirl.Orders.*;
-import com.girls.TheGirl.OrderHasProduct.*;
+//import com.girls.TheGirl.OrderHasProduct.*;
 import com.girls.TheGirl.Product.Product;
 import com.girls.TheGirl.Product.ProductRepository;
 import java.util.List;

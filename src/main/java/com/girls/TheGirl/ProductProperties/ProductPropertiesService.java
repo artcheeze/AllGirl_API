@@ -34,4 +34,8 @@ public class ProductPropertiesService {
         return productPropertiesRepository.findById(id);
     }
     
+    public ProductProperties createProductProperties (ProductProperties prodProp){
+        return productPropertiesRepository.save(prodProp);
+    }
+    
 }

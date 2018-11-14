@@ -5,6 +5,7 @@
  */
 package com.girls.TheGirl.Product;
 
+import com.girls.TheGirl.ProductDetail.ProductDetail;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,12 @@ class ProductService {
     public Product createProduct(Product product) {
         return productRepository.save(product);
     }
+
+    public Optional<Product> retrieveProduct(Long id) {
+        return productRepository.findById(id);
+    }
+
+    
 
     
 }

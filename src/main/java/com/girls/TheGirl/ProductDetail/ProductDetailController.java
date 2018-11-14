@@ -46,10 +46,10 @@ public class ProductDetailController {
     }
     
     @PostMapping()
-    public ResponseEntity<?> postProductDetail(@Valid @RequestBody Product body){
-        Product prod = productDetailService.createProductDetail(body);
+    public ResponseEntity<?> postProductDetail(@Valid @RequestBody ProductDetail body){
+        ProductDetail prodDetail = productDetailService.createProductDetail(body);
         
-        return ResponseEntity.status(HttpStatus.CREATED).body(prod);
+        return ResponseEntity.status(HttpStatus.CREATED).body(prodDetail);
     }
 
 }

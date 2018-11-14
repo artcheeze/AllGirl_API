@@ -48,9 +48,9 @@ public class ProductPropertiesController {
     }
      
     @PostMapping()
-    public ResponseEntity<?> postProductPropertiesController(@Valid @RequestBody Product body){
-        Product prod = productPropertiesService.createProductProperties(body);
+    public ResponseEntity<?> postProductPropertiesController(@Valid @RequestBody ProductProperties body){
+        ProductProperties prodProp = productPropertiesService.createProductProperties(body);
         
-        return ResponseEntity.status(HttpStatus.CREATED).body(prod);
+        return ResponseEntity.status(HttpStatus.CREATED).body(prodProp);
     }
 }

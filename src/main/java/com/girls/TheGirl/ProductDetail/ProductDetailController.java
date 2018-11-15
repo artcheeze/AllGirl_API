@@ -24,14 +24,14 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Administrator
  */
 
- @RestController
-@RequestMapping("/productdetail")
+@RestController
+@RequestMapping("/ProductDetail")
 public class ProductDetailController {
 
     @Autowired
     ProductDetailService productDetailService;
 
-    @GetMapping("/") ///////จริงๆมันต้องเขียนแบบนี้ @GetMapping() ถ้าเขียนแบบ "/" เวลาเรียกต้องพิม /ProductDetail/ 
+    @GetMapping()
     public List<ProductDetail> getProductDetail() {
         return productDetailService.retrieveProductDetail();
     }

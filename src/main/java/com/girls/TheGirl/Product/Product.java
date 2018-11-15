@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.girls.TheGirl.Product;
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,20 +9,27 @@ import javax.validation.constraints.*;
 
 import lombok.Data;
 
-/**
- *
- * @author A
- */
 @Data
 @Entity
-public class Product {
+public class Product implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long prodId;
 
-    @NotNull
+    @NotBlank
     private String prodName;
 
-    @NotNull
+    @NotBlank
     private int prodPrice;
+
+    public Product(String prodName, int prodPrice) {
+        this.prodName = prodName;
+        this.prodPrice = prodPrice;
+    }
+
+    public Product() {
+        super();
+    }
+    
+    
 }

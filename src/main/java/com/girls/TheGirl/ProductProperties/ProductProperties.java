@@ -27,11 +27,20 @@ public class ProductProperties implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long prodPropId;
 
-    @NotNull
-    @OneToOne
-    @JoinColumn (name ="prodId")
-    private Product prodId;
+//    @NotNull
+//    @OneToOne
+//    @JoinColumn (name ="prodId")
+    private int prodId;
    
     private String prodSize;
     private String prodColor;
+
+    public ProductProperties(String prodSize, String prodColor) {
+        this.prodSize = prodSize;
+        this.prodColor = prodColor;
+    }
+    
+    public ProductProperties(){
+        super();
+    }
 }

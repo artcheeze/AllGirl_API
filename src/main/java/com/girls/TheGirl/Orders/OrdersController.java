@@ -49,9 +49,9 @@ public class OrdersController {
         return ResponseEntity.status(HttpStatus.CREATED).body(o);
     }
     //สร้างรับ post addressจากอาทฟร้อน
+
      @PutMapping("/updateAddress/{id}")
     public ResponseEntity<?> putUpdateAddress(@PathVariable Long id,@Valid @RequestBody Orders body){
-     
         Optional<Orders> o = OrdersService.updateAddress(id,body);
         System.out.println("putttttttttttttttttttt "+body);
          return ResponseEntity.ok().build();

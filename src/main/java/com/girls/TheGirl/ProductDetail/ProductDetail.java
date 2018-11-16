@@ -20,9 +20,7 @@ public class ProductDetail implements Serializable {
     private Long prodDetailId;
     
     @NotNull
-    @OneToOne
-    @JoinColumn(name ="prodId")
-    private Product prodId;
+    private int prodId;
 
     @NotNull
     private String prodCategory;

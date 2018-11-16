@@ -24,6 +24,7 @@ import lombok.Data;
  *
  * @author A
  */
+
 @Data
 @Entity
 public class Payment {

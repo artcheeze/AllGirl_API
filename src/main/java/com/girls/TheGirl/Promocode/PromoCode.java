@@ -34,5 +34,5 @@ public class PromoCode {
     private int discount;
 
     @Temporal(TemporalType.DATE)
-    private Date expireDate;
+    private java.util.Date expireDate;
 }

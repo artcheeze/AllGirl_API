@@ -13,6 +13,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author A
  */
 public interface ProductRepository extends JpaRepository<Product, Long> {
-    //List<Product> findByFirstName(String firstName);
+//    List<Product> findById(long id);
 
 }

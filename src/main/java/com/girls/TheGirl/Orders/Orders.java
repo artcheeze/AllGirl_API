@@ -38,14 +38,13 @@ public class Orders {
     @NotNull
     private int totalPrice;
     
-    //@NotNull
-    @NotBlank
+    @NotNull
+    private int quantity;
+    
     private String promoCode;
 
     @NotNull
-  //  @OneToOne
-   // @JoinColumn(name = "paymentId")
-    private int paymentId;
+    private String paymentStatus;
     
      @NotNull
     private String address; 

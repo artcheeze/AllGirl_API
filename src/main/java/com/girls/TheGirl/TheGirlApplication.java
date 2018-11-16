@@ -10,9 +10,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @SpringBootApplication
 @RestController
-public class TheGirlApplication {
+public class TheGirlApplication  {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         SpringApplication.run(TheGirlApplication.class, args);
     }
 

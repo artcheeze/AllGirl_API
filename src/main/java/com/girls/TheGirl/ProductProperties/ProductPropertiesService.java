@@ -18,13 +18,13 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ProductPropertiesService {
-
+    @Autowired
     private ProductPropertiesRepository productPropertiesRepository;
     
-    @Autowired
-    public ProductPropertiesService(ProductPropertiesRepository repository) {
-        this.productPropertiesRepository = repository;
-    }
+//    @Autowired
+//    public ProductPropertiesService(ProductPropertiesRepository repository) {
+//        this.productPropertiesRepository = repository;
+//    }
     
     public List<ProductProperties> retrieveProductProperties() {
         return (List<ProductProperties>) productPropertiesRepository.findAll();

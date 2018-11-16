@@ -16,12 +16,13 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ProductDetailService {
+    @Autowired
     private ProductDetailRepository productDetailRepository;
 
-    @Autowired
-    public ProductDetailService(ProductDetailRepository repository) {
-        this.productDetailRepository = repository;
-    }
+//    @Autowired //ใครสอนเขียนงี้
+//    public ProductDetailService(ProductDetailRepository repository) {
+//        this.productDetailRepository = repository;
+//    }
 
     public List<ProductDetail> retrieveProductDetail() {
         return (List<ProductDetail>) productDetailRepository.findAll();
@@ -30,6 +31,7 @@ public class ProductDetailService {
     public Optional<ProductDetail> retrieveProductDetail(Long id) {
         return productDetailRepository.findById(id);
     }
+    
     public ProductDetail createProductDetail(ProductDetail pd){
         return productDetailRepository.save(pd);
     }

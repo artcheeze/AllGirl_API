@@ -10,6 +10,7 @@ package com.girls.TheGirl.Orders;
 import com.girls.TheGirl.Product.Product;
 
 import com.girls.TheGirl.Orders.Orders;
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
 import java.util.List;
 import java.util.Optional;
 import javax.validation.Valid;
@@ -48,9 +49,10 @@ public class OrdersController {
         return ResponseEntity.status(HttpStatus.CREATED).body(o);
     }
     //สร้างรับ post addressจากอาทฟร้อน
-     @PutMapping("/updateAddress")
+
+     @PutMapping("/updateAddress/{id}")
     public ResponseEntity<?> putUpdateAddress(@PathVariable Long id,@Valid @RequestBody Orders body){
-     //   Optional<Orders> o = OrdersService.updateAddress(id,body);
+        Optional<Orders> o = OrdersService.updateAddress(id,body);
         System.out.println("putttttttttttttttttttt "+body);
          return ResponseEntity.ok().build();
     }

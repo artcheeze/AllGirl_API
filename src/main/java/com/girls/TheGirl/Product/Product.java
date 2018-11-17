@@ -19,7 +19,7 @@ public class Product implements Serializable{
     @NotBlank
     private String prodName;
 
-    @NotBlank
+    @NotNull
     private int prodPrice;
 
     public Product(String prodName, int prodPrice) {

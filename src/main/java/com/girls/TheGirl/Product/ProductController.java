@@ -51,6 +51,7 @@ public class ProductController {
     //////////////////////////////////////เพิ่มสินค้าด้วย JSON ในรูปแบบของการยิง POST เข้ามา/////////////////////////////////////
     @PostMapping()
     public ResponseEntity<?> postProduct(@Valid @RequestBody Product body){
+        System.out.println(body);
         Product p = ProductService.createProduct(body);
         
         return ResponseEntity.status(HttpStatus.CREATED).body(p);

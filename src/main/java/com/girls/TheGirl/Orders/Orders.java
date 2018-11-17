@@ -49,6 +49,9 @@ public class Orders {
      @NotNull
     private String address; 
      
+     @NotNull
+    private String email; 
+     
      //แก้ตามerแล้ว
 
     

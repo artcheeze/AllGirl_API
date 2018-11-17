@@ -17,8 +17,11 @@ import com.girls.TheGirl.Orders.Orders;
 import java.io.IOException;
 import java.util.List;
 import javax.validation.Valid;
+import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import static org.springframework.http.HttpStatus.BAD_REQUEST;
+import static org.springframework.http.HttpStatus.OK;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,18 +41,23 @@ import org.springframework.web.bind.annotation.RestController;
 public class PaymentController {
     @JsonDeserialize
     @PostMapping()
-    public String postPayment(@RequestParam(name="omiseToken") String body,@RequestParam(name="total") int total) throws ClientException, IOException, OmiseException{
+    public HttpStatus postPayment(@RequestBody JSONObject body) throws ClientException, IOException, OmiseException{
+        HttpStatus status = OK;
+        
+         String tk = body.getAsString("tk");
+         int amount = (int) body.getAsNumber("amount");
+         
         Client client = new Client("pkey_test_5dwrs15v3vx4cildg78", "skey_test_5dwrs15ve85hs0x93i1");
         try {
             Charge charge = client.charges().create(new Charge.Create()
-                    .amount(total) // THB 1,000.00
+                    .amount(amount) 
                     .currency("THB")
-                    .card(body));
+                    .card(tk));
         } catch (IOException e) {
-            System.out.println(e);
+            status = BAD_REQUEST;
         }
        
 
-        return "aaa";
+        return status;
     }
 }

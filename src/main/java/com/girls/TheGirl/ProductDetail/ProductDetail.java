@@ -19,13 +19,7 @@ public class ProductDetail implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long prodDetailId;
     
-<<<<<<< HEAD
-    @NotNull
-=======
-//    @NotNull
-//    @OneToOne
-//    @JoinColumn(name ="prodId")
->>>>>>> 1f8cb86047815e6a8a3d966893e0206d338cba51
+
     private int prodId;
 
     @NotNull

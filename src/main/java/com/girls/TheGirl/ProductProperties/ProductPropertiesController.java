@@ -39,7 +39,7 @@ public class ProductPropertiesController {
     }
 
     @GetMapping("/{id}")
-     public ResponseEntity<?> getProductDetailById(@PathVariable Long id) {
+     public ResponseEntity<?> getProductPropertiesById(@PathVariable Long id) {
         Optional<ProductProperties> prodProperties = productPropertiesService.retrieveProductProperties(id);
         if(prodProperties.isPresent()) {
             return ResponseEntity.notFound().build();

@@ -74,20 +74,21 @@ public class OrdersController {
             String prodName = body.getAsString("name");
             int qun = (int) body.getAsNumber("qun");
             int total = (int) body.getAsNumber("tal");
+            String id = body.getAsString("id");
 
-            sendmail(email, prodName, qun, total);
+            sendmail(email, prodName, qun, total,id);
        
          
         return body;
     }
 
-    private void sendmail(String email, String prodName, int qun, int total) throws AddressException, MessagingException, IOException {
+    private void sendmail(String email, String prodName, int qun, int total, String id) throws AddressException, MessagingException, IOException {
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.host", "smtp.gmail.com");
         props.put("mail.smtp.port", "587");
-        System.out.println("" + email + prodName + qun + total);
+        System.out.println("" + email + prodName + qun + total +id);
         Session session = Session.getInstance(props, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication("mustache.girls48@gmail.com", "namotassa");
@@ -97,7 +98,7 @@ public class OrdersController {
         msg.setFrom(new InternetAddress("Mustache.girls", false));
 
         msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
-        msg.setSubject("Confirmed orders");
+        msg.setSubject("Confirmed orders No. 00"+id);
         msg.setContent("<h1>"+prodName+"</h1>"+"<h3>"+" Amount: " + qun +"</h3>"+"<h3>"+" Total: " + total +"Baht </h3>"+"<h3>"+"Status: shipping"+"</h3>", "text/html");
         msg.setSentDate(new Date());
 
